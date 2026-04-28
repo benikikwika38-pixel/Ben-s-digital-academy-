@@ -2,21 +2,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cours Langage C - Débutant</title><style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
+<title>Apprendre le langage C</title><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:linear-gradient(135deg,#0f172a,#1e293b);color:white;}
 
-body{
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color:white;
-  min-height:100vh;
-}
-
-/* PAGE D'ACCUEIL */
 .hero{
   height:100vh;
   display:flex;
@@ -24,144 +13,82 @@ body{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
 }
-
-.hero h1{
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  color:#cbd5e1;
-  margin-bottom:20px;
-}
-
+.hero h1{font-size:32px;margin-bottom:10px;}
+.hero p{color:#cbd5e1;margin-bottom:20px;}
 .hero button{
-  background:#22c55e;
-  border:none;
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:bold;
-  color:black;
-  transition:0.3s;
+  background:#22c55e;padding:12px 20px;border:none;border-radius:10px;
+  font-weight:bold;cursor:pointer;
 }
 
-.hero button:hover{
-  background:#16a34a;
-  transform:scale(1.05);
-}
-
-/* CONTENU COURS */
-.container{
-  padding:20px;
-  max-width:900px;
-  margin:auto;
-  display:none;
-}
-
+.container{display:none;padding:20px;max-width:900px;margin:auto;}
 .card{
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  padding:18px;
-  margin-bottom:15px;
-  border-radius:12px;
-  backdrop-filter: blur(10px);
-  transition:0.3s;
+  background:rgba(255,255,255,0.05);
+  padding:15px;border-radius:12px;margin-bottom:15px;
+}
+.card h2{color:#22c55e;margin-bottom:10px;}
+.card button{
+  background:#22c55e;border:none;padding:8px 12px;
+  border-radius:8px;margin-right:5px;cursor:pointer;
 }
 
-.card:hover{
-  transform: scale(1.02);
-  border-color:#22c55e;
-}
-
-.card h2{
-  margin-bottom:10px;
-  color:#22c55e;
-}
-
-.card p{
-  margin-bottom:10px;
-  color:#cbd5e1;
-}
-
-button.course-btn{
-  background:#22c55e;
-  border:none;
-  padding:10px 15px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
-  color:black;
-}
-
-pre{
-  background:#0b1220;
-  padding:10px;
-  border-radius:8px;
-  overflow-x:auto;
-  margin-top:10px;
-  color:#e2e8f0;
-}
-
-.hidden{
-  display:none;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  color:#94a3b8;
-  font-size:14px;
-}
-
-</style></head><body><!-- PAGE INDEX --><div class="hero" id="home">
-  <h1>📘 Apprends le langage C</h1>
-  <p>Deviens développeur étape par étape avec des cours simples et pratiques</p>
-  <button onclick="startCourse()">🚀 Commencer le cours</button>
-</div><!-- COURS --><div class="container" id="course"><div class="card">
+.hidden{display:none;}
+pre{background:#0b1220;padding:10px;border-radius:8px;margin-top:10px;}
+</style></head><body><!-- ACCUEIL --><div class="hero" id="home">
+  <h1>📘 Apprendre le langage C</h1>
+  <p>Cours complet du niveau débutant avec pratique</p>
+  <button onclick="startCourse()">🚀 Commencer</button>
+</div><!-- COURS --><div class="container" id="course"><!-- CHAPITRE 1 --><div class="card">
 <h2>Chapitre 1 : Introduction</h2>
-<p>Découvre les bases du langage C.</p>
-<button class="course-btn" onclick="toggle('c1')">Voir le cours</button>
-<div id="c1" class="hidden">
+<button onclick="toggle('l1')">Cours</button>
+<button onclick="toggle('e1')">Exercice</button><div id="l1" class="hidden">
 <pre>
-#include <stdio.h>int main() { printf("Bonjour le monde"); return 0; } </pre>
+#include <stdio.h>int main(){ printf("Bonjour"); return 0; } </pre>
 
-</div>
-</div><div class="card">
-<h2>Chapitre 2 : Entrées / Sorties</h2>
-<p>Utiliser printf et scanf.</p>
-<button class="course-btn" onclick="toggle('c2')">Voir le cours</button>
-<div id="c2" class="hidden">
+</div><div id="e1" class="hidden">
 <pre>
-int age;
-printf("Entre ton age : ");
-scanf("%d", &age);
+Exercice :
+Afficher ton nom et 3 phrases
 </pre>
 </div>
-</div><div class="card">
+</div><!-- CHAPITRE 2 --><div class="card">
+<h2>Chapitre 2 : Entrées / Sorties</h2>
+<button onclick="toggle('l2')">Cours</button>
+<button onclick="toggle('e2')">Exercice</button><div id="l2" class="hidden">
+<pre>
+int age;
+printf("Age : ");
+scanf("%d", &age);
+</pre>
+</div><div id="e2" class="hidden">
+<pre>
+Exercice :
+Demander l'âge et afficher
+</pre>
+</div>
+</div><!-- CHAPITRE 3 --><div class="card">
 <h2>Chapitre 3 : Variables</h2>
-<p>Types de données en C.</p>
-<button class="course-btn" onclick="toggle('c3')">Voir le cours</button>
-<div id="c3" class="hidden">
+<button onclick="toggle('l3')">Cours</button>
+<button onclick="toggle('e3')">Exercice</button><div id="l3" class="hidden">
 <pre>
 int a = 10;
 float b = 5.5;
 char c = 'A';
 </pre>
+</div><div id="e3" class="hidden">
+<pre>
+Exercice :
+Créer 3 variables et afficher
+</pre>
 </div>
-</div><footer>
-💻 Apprendre le C étape par étape
-</footer></div><script>
+</div></div><script>
 function startCourse(){
-  document.getElementById("home").style.display = "none";
-  document.getElementById("course").style.display = "block";
+ document.getElementById('home').style.display='none';
+ document.getElementById('course').style.display='block';
 }
 
 function toggle(id){
-  let el = document.getElementById(id);
-  el.classList.toggle("hidden");
+ document.getElementById(id).classList.toggle('hidden');
 }
 </script></body>
-  </html>
+</html>
