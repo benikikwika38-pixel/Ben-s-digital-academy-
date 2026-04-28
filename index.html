@@ -1,72 +1,167 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="fr">
 <head>
-<title>ben'sDigital Academy</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Langage C - Débutant</title><style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
 body{
-font-family: Arial;
-background:#f4f4f4;
-text-align:center;
-padding:20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color:white;
+  min-height:100vh;
 }
 
+/* PAGE D'ACCUEIL */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+.hero button{
+  background:#22c55e;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  color:black;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  background:#16a34a;
+  transform:scale(1.05);
+}
+
+/* CONTENU COURS */
 .container{
-background:white;
-padding:30px;
-border-radius:10px;
-max-width:500px;
-margin:auto;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+  padding:20px;
+  max-width:900px;
+  margin:auto;
+  display:none;
 }
 
-h1{
-color:#2c3e50;
+.card{
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:18px;
+  margin-bottom:15px;
+  border-radius:12px;
+  backdrop-filter: blur(10px);
+  transition:0.3s;
 }
 
-input{
-width:90%;
-padding:10px;
-margin:10px;
-border:1px solid #ccc;
-border-radius:5px;
+.card:hover{
+  transform: scale(1.02);
+  border-color:#22c55e;
 }
 
-button{
-background:#3498db;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:5px;
-cursor:pointer;
+.card h2{
+  margin-bottom:10px;
+  color:#22c55e;
 }
 
-button:hover{
-background:#2980b9;
+.card p{
+  margin-bottom:10px;
+  color:#cbd5e1;
 }
-</style>
-</head>
 
-<body>
+button.course-btn{
+  background:#22c55e;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  color:black;
+}
 
-<div class="container">
+pre{
+  background:#0b1220;
+  padding:10px;
+  border-radius:8px;
+  overflow-x:auto;
+  margin-top:10px;
+  color:#e2e8f0;
+}
 
-<h1>Béni Digital Academy</h1>
+.hidden{
+  display:none;
+}
 
-<p>Apprendre l'informatique gratuitement pour débutant</p>
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+  font-size:14px;
+}
 
-<h2>Formulaire d'inscription</h2>
-
-<form>
-<input type="text" placeholder="Votre nom" required><br>
-<input type="email" placeholder="Votre email" required><br>
-<input type="text" placeholder="Votre ville"><br>
-
-<button type="submit">S'inscrire</button>
-
-</form>
+</style></head><body><!-- PAGE INDEX --><div class="hero" id="home">
+  <h1>📘 Apprends le langage C</h1>
+  <p>Deviens développeur étape par étape avec des cours simples et pratiques</p>
+  <button onclick="startCourse()">🚀 Commencer le cours</button>
+</div><!-- COURS --><div class="container" id="course"><div class="card">
+<h2>Chapitre 1 : Introduction</h2>
+<p>Découvre les bases du langage C.</p>
+<button class="course-btn" onclick="toggle('c1')">Voir le cours</button>
+<div id="c1" class="hidden">
+<pre>
+#include <stdio.h>int main() { printf("Bonjour le monde"); return 0; } </pre>
 
 </div>
+</div><div class="card">
+<h2>Chapitre 2 : Entrées / Sorties</h2>
+<p>Utiliser printf et scanf.</p>
+<button class="course-btn" onclick="toggle('c2')">Voir le cours</button>
+<div id="c2" class="hidden">
+<pre>
+int age;
+printf("Entre ton age : ");
+scanf("%d", &age);
+</pre>
+</div>
+</div><div class="card">
+<h2>Chapitre 3 : Variables</h2>
+<p>Types de données en C.</p>
+<button class="course-btn" onclick="toggle('c3')">Voir le cours</button>
+<div id="c3" class="hidden">
+<pre>
+int a = 10;
+float b = 5.5;
+char c = 'A';
+</pre>
+</div>
+</div><footer>
+💻 Apprendre le C étape par étape
+</footer></div><script>
+function startCourse(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("course").style.display = "block";
+}
 
-</body>
-</html>
+function toggle(id){
+  let el = document.getElementById(id);
+  el.classList.toggle("hidden");
+}
+</script></body>
+  </html>
