@@ -16,69 +16,99 @@ body{background:linear-gradient(135deg,#0f172a,#1e293b);color:white;}
 }
 .hero h1{font-size:32px;margin-bottom:10px;}
 .hero p{color:#cbd5e1;margin-bottom:20px;}
-.hero button{
-  background:#22c55e;padding:12px 20px;border:none;border-radius:10px;
-  font-weight:bold;cursor:pointer;
-}
+.hero button{background:#22c55e;padding:12px 20px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;}
 
 .container{display:none;padding:20px;max-width:900px;margin:auto;}
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:15px;border-radius:12px;margin-bottom:15px;
-}
+.card{background:rgba(255,255,255,0.05);padding:15px;border-radius:12px;margin-bottom:15px;}
 .card h2{color:#22c55e;margin-bottom:10px;}
-.card button{
-  background:#22c55e;border:none;padding:8px 12px;
-  border-radius:8px;margin-right:5px;cursor:pointer;
-}
-
+.card button{background:#22c55e;border:none;padding:8px 12px;border-radius:8px;margin-right:5px;cursor:pointer;}
 .hidden{display:none;}
-pre{background:#0b1220;padding:10px;border-radius:8px;margin-top:10px;}
-</style></head><body><!-- ACCUEIL --><div class="hero" id="home">
+pre{background:#0b1220;padding:10px;border-radius:8px;margin-top:10px;white-space:pre-wrap;}
+</style></head><body><div class="hero" id="home">
   <h1>📘 Apprendre le langage C</h1>
-  <p>Cours complet du niveau débutant avec pratique</p>
+  <p>Cours complet du niveau débutant avec explications détaillées</p>
   <button onclick="startCourse()">🚀 Commencer</button>
-</div><!-- COURS --><div class="container" id="course"><!-- CHAPITRE 1 --><div class="card">
+</div><div class="container" id="course"><div class="card">
 <h2>Chapitre 1 : Introduction</h2>
 <button onclick="toggle('l1')">Cours</button>
 <button onclick="toggle('e1')">Exercice</button><div id="l1" class="hidden">
 <pre>
-#include <stdio.h>int main(){ printf("Bonjour"); return 0; } </pre>
+Le langage C est un langage de programmation utilisé pour créer des logiciels.
+Il permet de donner des instructions précises à l’ordinateur.
+Un programme C commence toujours par une fonction appelée main.
+C’est le point d’entrée du programme.La structure de base est : #include <stdio.h> int main(){ return 0; }
 
+La ligne #include permet d’utiliser des fonctions comme printf. printf sert à afficher du texte à l’écran. Chaque instruction se termine par un point-virgule ; Les accolades { } définissent un bloc de code. Le programme s’exécute de haut en bas. Le return 0 indique que le programme s’est bien terminé.
+
+Le C est un langage sensible à la casse. printf est différent de Printf.
+
+C’est un langage puissant utilisé pour créer des systèmes.
+
+</pre>
 </div><div id="e1" class="hidden">
 <pre>
 Exercice :
-Afficher ton nom et 3 phrases
+1. Affiche ton nom
+2. Affiche 3 phrases
+3. Teste printf
 </pre>
 </div>
-</div><!-- CHAPITRE 2 --><div class="card">
+</div><div class="card">
 <h2>Chapitre 2 : Entrées / Sorties</h2>
 <button onclick="toggle('l2')">Cours</button>
 <button onclick="toggle('e2')">Exercice</button><div id="l2" class="hidden">
 <pre>
-int age;
-printf("Age : ");
-scanf("%d", &age);
+printf permet d’afficher des informations.
+scanf permet de lire les données entrées par l’utilisateur.Exemple : int age; printf("Entre ton age : "); scanf("%d", &age);
+
+%d est utilisé pour les entiers. %f pour les nombres décimaux. %c pour les caractères.
+
+Le symbole & permet de récupérer l’adresse mémoire.
+
+scanf attend une entrée utilisateur.
+
+Il faut respecter les formats sinon erreur.
+
+On peut afficher la valeur ensuite avec printf.
+
+Les entrées/sorties sont essentielles pour interagir.
+
 </pre>
 </div><div id="e2" class="hidden">
 <pre>
 Exercice :
-Demander l'âge et afficher
+1. Demande l’âge
+2. Affiche l’âge
+3. Demande un nombre
 </pre>
 </div>
-</div><!-- CHAPITRE 3 --><div class="card">
+</div><div class="card">
 <h2>Chapitre 3 : Variables</h2>
 <button onclick="toggle('l3')">Cours</button>
 <button onclick="toggle('e3')">Exercice</button><div id="l3" class="hidden">
 <pre>
-int a = 10;
-float b = 5.5;
-char c = 'A';
+Une variable sert à stocker une valeur.
+On doit déclarer une variable avant de l’utiliser.Types principaux : int : entier float : nombre décimal char : caractère
+
+Exemple : int a = 10; float b = 5.5; char c = 'A';
+
+Chaque variable a un type spécifique. On peut modifier la valeur.
+
+Les variables sont stockées en mémoire.
+
+Il faut donner un nom clair à chaque variable.
+
+On peut afficher une variable avec printf.
+
+Les variables sont la base de la programmation.
+
 </pre>
 </div><div id="e3" class="hidden">
 <pre>
 Exercice :
-Créer 3 variables et afficher
+1. Créer 3 variables
+2. Les afficher
+3. Modifier leurs valeurs
 </pre>
 </div>
 </div></div><script>
@@ -86,9 +116,8 @@ function startCourse(){
  document.getElementById('home').style.display='none';
  document.getElementById('course').style.display='block';
 }
-
 function toggle(id){
  document.getElementById(id).classList.toggle('hidden');
 }
 </script></body>
-</html>
+                                                  </html>
